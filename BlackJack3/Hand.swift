@@ -8,6 +8,8 @@
 
 import Foundation
 
+import UIKit
+
 class Hand {
     
     var cards: [Int]
@@ -76,6 +78,9 @@ class Hand {
         }
         return cardString
     }
+    
+    
+    
     
     func getDealerCards(var dflip : Bool) -> String{
         
