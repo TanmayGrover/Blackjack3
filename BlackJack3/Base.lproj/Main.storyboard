@@ -81,7 +81,7 @@
                                         </variation>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CTE-96-nnE">
-                                        <rect key="frame" x="35" y="56" width="27" height="40"/>
+                                        <rect key="frame" x="35" y="56" width="27" height="49"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="27" id="Hkc-nc-EdT"/>
                                             <constraint firstAttribute="height" constant="34" id="d9V-yD-KNQ">
@@ -212,6 +212,7 @@
                                     <constraint firstAttribute="height" constant="30" id="xU5-ob-O9e"/>
                                 </constraints>
                                 <state key="normal" title="NEW ROUND">
+                                    <color key="titleColor" red="1" green="0.99670673720000003" blue="0.20300531150000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -238,6 +239,7 @@
                                     <constraint firstAttribute="height" constant="30" id="whE-nv-pOT"/>
                                 </constraints>
                                 <state key="normal" title="DEAL">
+                                    <color key="titleColor" red="1" green="0.99670673720000003" blue="0.20300531150000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -266,6 +268,7 @@
                                     <constraint firstAttribute="height" constant="30" id="ZkQ-CM-D1g"/>
                                 </constraints>
                                 <state key="normal" title="HIT">
+                                    <color key="titleColor" red="1" green="0.99670673720000003" blue="0.20300531150000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -289,6 +292,7 @@
                                     <constraint firstAttribute="width" constant="49" id="UJe-hD-idg"/>
                                 </constraints>
                                 <state key="normal" title="STAND">
+                                    <color key="titleColor" red="1" green="0.99670673720000003" blue="0.20300531150000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=compact">
@@ -311,8 +315,8 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="lCy-2D-dC6">
-                                        <rect key="frame" x="36" y="37" width="27" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="lCy-2D-dC6">
+                                        <rect key="frame" x="35" y="37" width="27" height="49"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="27" id="Pkb-Kw-m2T"/>
                                             <constraint firstAttribute="width" constant="27" id="fIe-uB-RL1"/>
@@ -346,7 +350,7 @@
                                     <constraint firstAttribute="height" constant="63" id="JCl-Qk-Hth">
                                         <variation key="heightClass=compact" constant="71"/>
                                     </constraint>
-                                    <constraint firstItem="lCy-2D-dC6" firstAttribute="leading" secondItem="uxv-qh-86m" secondAttribute="leading" constant="36" id="VLl-ga-8vc"/>
+                                    <constraint firstItem="lCy-2D-dC6" firstAttribute="leading" secondItem="uxv-qh-86m" secondAttribute="leading" constant="35" id="VLl-ga-8vc"/>
                                     <constraint firstItem="lCy-2D-dC6" firstAttribute="leading" secondItem="uxv-qh-86m" secondAttribute="leading" constant="36" id="YU0-qM-pqr"/>
                                     <constraint firstItem="c9v-9k-Jmg" firstAttribute="leading" secondItem="uxv-qh-86m" secondAttribute="leading" constant="27" id="dYl-fu-80t"/>
                                     <constraint firstAttribute="bottom" secondItem="lCy-2D-dC6" secondAttribute="bottom" id="rv0-Ue-wpZ"/>
@@ -379,7 +383,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdR-TS-LFL" userLabel="PlayerView">
                                 <rect key="frame" x="16" y="169" width="568" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPZ-cT-Nqp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPZ-cT-Nqp">
                                         <rect key="frame" x="35" y="8" width="65" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="80I-kr-ed3"/>
@@ -432,7 +436,7 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card1" translatesAutoresizingMaskIntoConstraints="NO" id="zeS-f8-tnj">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zeS-f8-tnj">
                                         <rect key="frame" x="35" y="46" width="27" height="49"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="27" id="10q-KE-2ez"/>
@@ -666,6 +670,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="aiCards" destination="SdR-TS-LFL" id="oLY-kS-dec"/>
                         <outlet property="playerCards" destination="Fgx-nE-feE" id="Jif-Be-fdZ"/>
                     </connections>
                 </viewController>
@@ -677,6 +682,5 @@
     <resources>
         <image name="back" width="120" height="170"/>
         <image name="background" width="667" height="622"/>
-        <image name="card1" width="120" height="170"/>
     </resources>
 </document>

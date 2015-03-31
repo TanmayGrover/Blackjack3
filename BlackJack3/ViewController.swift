@@ -12,13 +12,26 @@ class ViewController: UIViewController {
     
     //Declarations
     @IBOutlet weak var playerCards: UIView!
-    @IBOutlet weak var playercard1: UIImageView!
+    
+    //@IBOutlet weak var playercard1: UIImageView!
+    
+    @IBOutlet weak var aiCards: UIView!
     
     //Initialisation
     
-    var d = Deck()
+    var deckObject = Deck()
     var noOfPlayers :Int = 1
     var playerArray :[Player] = []
+    var dealerFlip : Bool = false
+    
+    var value : Int = 0
+    
+    var round : Int = 1
+    
+    var i1 : Int = 0
+    var j1 : Int = 0
+    
+
     
     
     override func viewDidLoad() {
@@ -54,39 +67,47 @@ class ViewController: UIViewController {
     
     @IBAction func Deal(sender: AnyObject) {
         
-        d.dealCard(2)
-        
-        for var index = 0; index < noOfPlayers; ++index {
+        deckObject.dealCard(2)
+        deckObject.shuffle()
+        //for var index = 0; index < noOfPlayers; ++index {
             
             
-            var p = Player(name: "P\(index)", money:100 )
+            var p = Player(name: "P\(0)", money:100 )
             playerArray.append(p)
+        
+        var p2 = Player(name: "P\(0)", money:100 )
+            playerArray.append(p2)
+        
+        println("inside method \(0)")
             
-            println("inside method \(index)")
-            
-            
-            playerArray[index].setUpHand()
-            
+            playerArray[0].hand.cards.removeAll()
+            playerArray[0].setUpHand()
+        displayCards(playerArray[0].hand.cards, playerCardView : playerCards, yCord : 56)
+        
+        
+            playerArray[1].hand.cards.removeAll()
+          playerArray[1].setUpHand()
+        displayCards(playerArray[1].hand.cards , playerCardView: aiCards, yCord: 46)
+        
             //getLabel(index).text = playerArray[index].hand.getAllCards()
             
-            displayCards(playerArray[index].hand.cards)
-            
-        }
+        
+        //}
         
         
         
         
     }
     
-    func displayCards(cards : [Int]){
+    func displayCards(cards : [Int],  playerCardView : UIView, yCord : CGFloat ){
         var temp : CGFloat = 35
         for i in 1...cards.count{
             
-            let testFrame : CGRect = CGRectMake( 35 + CGFloat(i-1)*temp,56,27,40)
+            let testFrame : CGRect = CGRectMake( 35 + CGFloat(i-1)*temp, yCord,27,49)
             
             var testView : UIView = UIView(frame: testFrame)
             
-            let imageName = "card2"
+            let imageName = "card"+String(cards[i-1])
             
             var image = UIImage(named: imageName)
             
@@ -96,7 +117,7 @@ class ViewController: UIViewController {
             
             testView.addSubview(imageView)
             
-            playerCards.addSubview(testView)
+            playerCardView.addSubview(testView)
             
         }
         
@@ -109,6 +130,8 @@ class ViewController: UIViewController {
         UIGraphicsEndImageContext()
         return newImage
     }
+    
+   
     
     
 }
