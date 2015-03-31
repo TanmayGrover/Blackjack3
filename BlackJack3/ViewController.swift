@@ -17,9 +17,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var aiCards: UIView!
     
+    
+    @IBOutlet weak var dealerCardsView: UIView!
+    
     //Initialisation
     
     var deckObject = Deck()
+     var dealerObject = Dealer()
     var noOfPlayers :Int = 1
     var playerArray :[Player] = []
     var dealerFlip : Bool = false
@@ -82,13 +86,16 @@ class ViewController: UIViewController {
             
             playerArray[0].hand.cards.removeAll()
             playerArray[0].setUpHand()
-        displayCards(playerArray[0].hand.cards, playerCardView : playerCards, yCord : 56)
+        displayCards(playerArray[0].hand.cards, playerCardView : playerCards, yCord : 56 , dealerCard : dealerFlip)
         
         
             playerArray[1].hand.cards.removeAll()
           playerArray[1].setUpHand()
-        displayCards(playerArray[1].hand.cards , playerCardView: aiCards, yCord: 46)
+        displayCards(playerArray[1].hand.cards , playerCardView: aiCards, yCord: 46 , dealerCard : dealerFlip)
         
+        dealerObject.hand.cards.removeAll()
+        dealerObject.setUpDealerHand()
+        displayCards(dealerObject.hand.cards , playerCardView: dealerCardsView, yCord: 37 , dealerCard : true)
             //getLabel(index).text = playerArray[index].hand.getAllCards()
             
         
@@ -99,16 +106,22 @@ class ViewController: UIViewController {
         
     }
     
-    func displayCards(cards : [Int],  playerCardView : UIView, yCord : CGFloat ){
+    func displayCards(cards : [Int],  playerCardView : UIView, yCord : CGFloat , dealerCard : Bool ){
         var temp : CGFloat = 35
+        var imageName : String
         for i in 1...cards.count{
             
             let testFrame : CGRect = CGRectMake( 35 + CGFloat(i-1)*temp, yCord,27,49)
             
             var testView : UIView = UIView(frame: testFrame)
             
-            let imageName = "card"+String(cards[i-1])
-            
+            if(dealerCard && i == 1){
+                 imageName = "back"
+            }
+            else{
+                
+                 imageName = "card"+String(cards[i-1])
+            }
             var image = UIImage(named: imageName)
             
             image = imageWithImage(image!, scaledToSize: CGSize(width: 27, height: 40))
