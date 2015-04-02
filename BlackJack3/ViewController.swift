@@ -80,10 +80,8 @@ class ViewController: UIViewController {
     @IBAction func Deal(sender: AnyObject) {
         
         deckObject.dealCard(2)
-        deckObject.shuffle()
-        
-        if(round > 0){
-        
+                if(round > 0){
+                    
             clearEverything()
         }
         round++
@@ -98,9 +96,9 @@ class ViewController: UIViewController {
         
         println("inside method \(0)")
             
+        
         playerArray[1].hand.cards.removeAll()
-
-            playerArray[0].setUpHand()
+        deckObject.shuffle();playerArray[0].setUpHand()
         displayCards(playerArray[0].hand.cards, playerCardView : playerCards, yCord : 56 , dealerCard : dealerFlip)
             playerArray[0].hand.status = statusOfHand.turn
         

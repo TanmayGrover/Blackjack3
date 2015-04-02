@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blakjack1" translatesAutoresizingMaskIntoConstraints="NO" id="i13-UX-KWe">
-                                <rect key="frame" x="26" y="90" width="300" height="350"/>
+                                <rect key="frame" x="18" y="90" width="300" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="H5d-So-lPS">
                                         <variation key="heightClass=compact" constant="250"/>
@@ -57,7 +57,7 @@
                                 <variation key="heightClass=compact" constant="250"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="C8N-Xl-UBu" secondAttribute="trailing" constant="243" id="ENr-gk-PXa"/>
-                            <constraint firstItem="i13-UX-KWe" firstAttribute="leading" secondItem="wTu-oA-nmv" secondAttribute="leadingMargin" constant="10" id="TcX-k0-r9Z">
+                            <constraint firstItem="i13-UX-KWe" firstAttribute="leading" secondItem="wTu-oA-nmv" secondAttribute="leadingMargin" constant="2" id="TcX-k0-r9Z">
                                 <variation key="heightClass=compact" constant="150"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="i13-UX-KWe" secondAttribute="trailing" constant="243" id="VOz-sC-PsJ"/>
