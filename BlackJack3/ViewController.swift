@@ -38,13 +38,13 @@ class ViewController: UIViewController {
     
     var value : Int = 1
     
-    var round : Int = 1
+    var round : Int = 0
     
     var i1 : Int = 0
     var j1 : Int = 0
     
     var statusString : String = ""
-    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +81,12 @@ class ViewController: UIViewController {
         
         deckObject.dealCard(2)
         deckObject.shuffle()
+        
+        if(round > 0){
+        
+            clearEverything()
+        }
+        round++
         //for var index = 0; index < noOfPlayers; ++index {
             
             
@@ -92,7 +98,8 @@ class ViewController: UIViewController {
         
         println("inside method \(0)")
             
-            playerArray[0].hand.cards.removeAll()
+        playerArray[1].hand.cards.removeAll()
+
             playerArray[0].setUpHand()
         displayCards(playerArray[0].hand.cards, playerCardView : playerCards, yCord : 56 , dealerCard : dealerFlip)
             playerArray[0].hand.status = statusOfHand.turn
@@ -109,7 +116,7 @@ class ViewController: UIViewController {
         
         //}
         
-        
+        gameStatus.text = "Game Started !!"
         
         
     }
@@ -160,14 +167,17 @@ class ViewController: UIViewController {
             
             displayCards(playerArray[0].hand.cards, playerCardView : playerCards, yCord : 56 , dealerCard : dealerFlip)
             
+            gameStatus.text = "Do you wanna Hit or Stand ?"
+            
             if (playerArray[0].hand.Blackjack()){
-                //gameStatus.text = "BLACKJACK !! Player Won"
+                gameStatus.text = "BLACKJACK !! Player Won"
                 playerArray[0].hand.status = statusOfHand.blackjack
                 stand()
             }
             else if (playerArray[0].hand.Busted()){
                 //gameStatus.text = "BUSTED !! PLAYER LOST"
                playerArray[0].hand.status = statusOfHand.busted
+                
                 stand()
                 
                 
@@ -175,6 +185,8 @@ class ViewController: UIViewController {
             }
             
         }
+       
+        
     }
     
     func getUITextField(var i : Int) -> UITextField {
@@ -286,6 +298,39 @@ class ViewController: UIViewController {
         gameStatus.text = statusString
         
             }
+    
+    func clearEverything(){
+        var k : Int = 0
+        //round++
+        
+        playerArray[0].hand.cards.removeAll()
+        playerArray[1].hand.cards.removeAll()
+        dealerObject.hand.cards.removeAll()
+        for p in playerArray{
+            
+            
+            
+            getUITextField(k).text = ""
+            //dealerCards.text = ""
+            gameStatus.text = ""
+                        k++
+        }
+        
+        
+        value = 0
+        i1 = 0
+        j1 = 0
+        
+        if (round > 5){
+            round = 0
+            //d.shuffle()
+        }
+        //roundCount.text = "Round \(round)"
+        
+        
+        
+    }
+
     
 
    

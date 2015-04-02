@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1197DE7D1ACD55FE004260F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1197DE7C1ACD55FE004260F7 /* Images.xcassets */; };
+		11ADB01A1ACD47680070706B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11ADB0191ACD47680070706B /* HomeViewController.swift */; };
 		11F687F01AC2309A00FED0F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F687EF1AC2309A00FED0F3 /* AppDelegate.swift */; };
 		11F687F21AC2309A00FED0F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F687F11AC2309A00FED0F3 /* ViewController.swift */; };
 		11F687F51AC2309A00FED0F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F687F31AC2309A00FED0F3 /* Main.storyboard */; };
-		11F687F71AC2309A00FED0F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11F687F61AC2309A00FED0F3 /* Images.xcassets */; };
 		11F687FA1AC2309A00FED0F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F687F81AC2309A00FED0F3 /* LaunchScreen.xib */; };
 		11F688061AC2309A00FED0F3 /* BlackJack3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F688051AC2309A00FED0F3 /* BlackJack3Tests.swift */; };
 		11F688101AC231AF00FED0F3 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6880F1AC231AF00FED0F3 /* Card.swift */; };
@@ -34,12 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1197DE7C1ACD55FE004260F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		11ADB0191ACD47680070706B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		11F687EA1AC2309A00FED0F3 /* BlackJack3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackJack3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F687EE1AC2309A00FED0F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11F687EF1AC2309A00FED0F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11F687F11AC2309A00FED0F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		11F687F41AC2309A00FED0F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		11F687F61AC2309A00FED0F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		11F687F91AC2309A00FED0F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		11F687FF1AC2309A00FED0F3 /* BlackJack3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlackJack3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F688041AC2309A00FED0F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,8 +97,9 @@
 			children = (
 				11F687EF1AC2309A00FED0F3 /* AppDelegate.swift */,
 				11F687F11AC2309A00FED0F3 /* ViewController.swift */,
+				11ADB0191ACD47680070706B /* HomeViewController.swift */,
 				11F687F31AC2309A00FED0F3 /* Main.storyboard */,
-				11F687F61AC2309A00FED0F3 /* Images.xcassets */,
+				1197DE7C1ACD55FE004260F7 /* Images.xcassets */,
 				11F687F81AC2309A00FED0F3 /* LaunchScreen.xib */,
 				11F6880F1AC231AF00FED0F3 /* Card.swift */,
 				11F688111AC231D800FED0F3 /* Shoe.swift */,
@@ -216,9 +219,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1197DE7D1ACD55FE004260F7 /* Images.xcassets in Resources */,
 				11F687F51AC2309A00FED0F3 /* Main.storyboard in Resources */,
 				11F687FA1AC2309A00FED0F3 /* LaunchScreen.xib in Resources */,
-				11F687F71AC2309A00FED0F3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +246,7 @@
 				11F6881B1AC231D800FED0F3 /* Player.swift in Sources */,
 				11F6881C1AC231D800FED0F3 /* Singleton.swift in Sources */,
 				11F688101AC231AF00FED0F3 /* Card.swift in Sources */,
+				11ADB01A1ACD47680070706B /* HomeViewController.swift in Sources */,
 				11F687F01AC2309A00FED0F3 /* AppDelegate.swift in Sources */,
 				11F6881E1AC231D800FED0F3 /* Dealer.swift in Sources */,
 				11F6881D1AC231D800FED0F3 /* HandStatus.swift in Sources */,
@@ -437,6 +441,7 @@
 				11F6880B1AC2309A00FED0F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		11F6880C1AC2309A00FED0F3 /* Build configuration list for PBXNativeTarget "BlackJack3Tests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +450,7 @@
 				11F6880E1AC2309A00FED0F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
