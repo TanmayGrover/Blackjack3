@@ -107,15 +107,15 @@ class ViewController: UIViewController {
     }
     
     func displayCards(cards : [Int],  playerCardView : UIView, yCord : CGFloat , dealerCard : Bool ){
-        var temp : CGFloat = 35
+        var temp : CGFloat = 55
         var imageName : String
         for i in 1...cards.count{
             
-            let testFrame : CGRect = CGRectMake( 35 + CGFloat(i-1)*temp, yCord,27,49)
+            let testFrame : CGRect = CGRectMake( 1 + CGFloat(i-1)*temp, yCord,50,70)
             
             var testView : UIView = UIView(frame: testFrame)
             
-            if(dealerCard && i == 1){
+            if(dealerCard && i==1){
                  imageName = "back"
             }
             else{
@@ -124,7 +124,7 @@ class ViewController: UIViewController {
             }
             var image = UIImage(named: imageName)
             
-            image = imageWithImage(image!, scaledToSize: CGSize(width: 27, height: 40))
+            image = imageWithImage(image!, scaledToSize: CGSize(width: 50, height: 70))
             
             let imageView = UIImageView(image: image!)
             
