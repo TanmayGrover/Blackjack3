@@ -17,12 +17,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var aiCards: UIView!
     
+    @IBOutlet weak var player1Bet: UITextField!
+    
+    @IBOutlet weak var player2Bet: UITextField!
     
     @IBOutlet weak var dealerCardsView: UIView!
     
     
-    @IBOutlet weak var gameStatus: UILabel!
+   
     
+    @IBOutlet weak var gameStatus: UILabel!
     
     //Initialisation
     
@@ -32,14 +36,14 @@ class ViewController: UIViewController {
     var playerArray :[Player] = []
     var dealerFlip : Bool = false
     
-    var value : Int = 0
+    var value : Int = 1
     
     var round : Int = 1
     
     var i1 : Int = 0
     var j1 : Int = 0
     
-
+    var statusString : String = ""
     
     
     override func viewDidLoad() {
@@ -157,26 +161,14 @@ class ViewController: UIViewController {
             displayCards(playerArray[0].hand.cards, playerCardView : playerCards, yCord : 56 , dealerCard : dealerFlip)
             
             if (playerArray[0].hand.Blackjack()){
-                gameStatus.text = "BLACKJACK !! Player Won"
+                //gameStatus.text = "BLACKJACK !! Player Won"
                 playerArray[0].hand.status = statusOfHand.blackjack
-                value++
-                if (value <= playerArray.count){
-                    
-                    playerArray[value].hand.status = statusOfHand.turn
-                    
-                }
-                
+                stand()
             }
             else if (playerArray[0].hand.Busted()){
-                gameStatus.text = "BUSTED !! PLAYER LOST"
+                //gameStatus.text = "BUSTED !! PLAYER LOST"
                playerArray[0].hand.status = statusOfHand.busted
-                value++
-                if(value <=  playerArray.count){
-                    
-                    
-                    playerArray[value].hand.status = statusOfHand.turn
-                    //break
-                }
+                stand()
                 
                 
                 
@@ -185,7 +177,117 @@ class ViewController: UIViewController {
         }
     }
     
+    func getUITextField(var i : Int) -> UITextField {
+        switch i {
+            
+        case 0 : return player1Bet
+            
+        case 1 : return player2Bet
+            
+                default :
+            return player1Bet
+            
+        }
+        
+    }
     
+
+    
+    
+    
+    @IBAction func standButton(sender: AnyObject) {
+        stand()
+        
+    }
+    
+        func callingDealer(){
+        while(dealerObject.hand.score <= 16){
+            dealerObject.setUpDealerAgainHand()
+        }
+        displayCards(dealerObject.hand.cards , playerCardView: dealerCardsView, yCord: 37 , dealerCard : dealerFlip)
+        calculateBet()
+
+    }
+    
+    func stand(){
+        while(playerArray[1].hand.score <= 18){
+            playerArray[1].getCardForHit()
+        }
+        displayCards(playerArray[1].hand.cards , playerCardView: aiCards, yCord: 46 , dealerCard : dealerFlip)
+        
+        if (playerArray[1].hand.Blackjack()){
+            //gameStatus.text = "BLACKJACK !! Player Won"
+            playerArray[1].hand.status = statusOfHand.blackjack
+            
+            
+        }
+        else if (playerArray[1].hand.Busted()){
+            //gameStatus.text = "BUSTED !! PLAYER LOST"
+            playerArray[1].hand.status = statusOfHand.busted
+            
+            
+            
+            
+        }
+        
+        callingDealer()
+    }
+    
+
+    
+    func calculateBet() {
+        
+        
+        
+        for players in playerArray{
+            
+            if(dealerObject.hand.score > 21 && players.hand.score <= 21) {
+                players.hand.money = players.hand.money + getUITextField(i1).text.toInt()!
+            }
+                
+            else if (dealerObject.hand.score == 21 && dealerObject.hand.score > players.hand.score){
+                
+                players.hand.money = players.hand.money - getUITextField(i1).text.toInt()!
+                
+            }
+                
+            else if (dealerObject.hand.score == players.hand.score) && (dealerObject.hand.score <= 21 && players.hand.score <= 21 ){
+                
+            }
+                
+            else if (players.hand.status == statusOfHand.blackjack){
+                players.hand.money = players.hand.money + getUITextField(i1).text.toInt()!
+            }
+            else if ( players.hand.status == statusOfHand.busted){
+                players.hand.money = players.hand.money - getUITextField(i1).text.toInt()!
+            }
+                
+            else if (players.hand.score < 21 && dealerObject.hand.score < 21 && players.hand.score > dealerObject.hand.score ){
+                players.hand.money = players.hand.money + getUITextField(i1).text.toInt()!
+            }
+            else if (players.hand.score < 21 && dealerObject.hand.score < 21 && players.hand.score < dealerObject.hand.score ){
+                players.hand.money = players.hand.money - getUITextField(i1).text.toInt()!
+            }
+            
+            
+            i1++
+            
+        }
+        
+        
+        for p in playerArray{
+            
+            var playerStatus : String = "P\(j1+1) has \(p.hand.money)"
+            statusString = statusString + "  " + playerStatus
+            j1++
+        }
+       
+        
+        gameStatus.text = statusString
+        
+            }
+    
+
    
     
     

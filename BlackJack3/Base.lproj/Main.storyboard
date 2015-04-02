@@ -128,7 +128,9 @@
                                     <constraint firstItem="mgF-Qi-G7P" firstAttribute="top" secondItem="Fgx-nE-feE" secondAttribute="top" constant="5" id="TNi-GQ-bwz"/>
                                     <constraint firstAttribute="bottom" secondItem="CTE-96-nnE" secondAttribute="bottom" constant="4" id="VJc-oR-yGr"/>
                                     <constraint firstAttribute="bottom" secondItem="CTE-96-nnE" secondAttribute="bottom" constant="5" id="cmU-AR-UUa"/>
-                                    <constraint firstItem="mgF-Qi-G7P" firstAttribute="leading" secondItem="1WT-xU-8q0" secondAttribute="trailing" constant="53" id="dfw-ZX-YQ8"/>
+                                    <constraint firstItem="mgF-Qi-G7P" firstAttribute="leading" secondItem="1WT-xU-8q0" secondAttribute="trailing" constant="53" id="dfw-ZX-YQ8">
+                                        <variation key="heightClass=compact" constant="150"/>
+                                    </constraint>
                                     <constraint firstItem="mgF-Qi-G7P" firstAttribute="top" secondItem="Fgx-nE-feE" secondAttribute="top" constant="8" id="nci-UG-KpZ"/>
                                     <constraint firstItem="1WT-xU-8q0" firstAttribute="leading" secondItem="Fgx-nE-feE" secondAttribute="leading" constant="35" id="sjf-Zv-TnL"/>
                                     <constraint firstItem="CTE-96-nnE" firstAttribute="top" secondItem="1WT-xU-8q0" secondAttribute="bottom" constant="8" id="tSM-aF-2UM">
@@ -260,6 +262,9 @@
                                         <exclude reference="UJe-hD-idg"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="standButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SL4-zo-MHy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nC6-fQ-Baz">
                                 <rect key="frame" x="171" y="456" width="30" height="30"/>
@@ -289,7 +294,7 @@
                                     <rect key="frame" x="0.0" y="456" width="30" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="hit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LJ6-AK-Aqt"/>
+                                    <action selector="hit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="U2g-fT-Bly"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdR-TS-LFL" userLabel="PlayerView">
@@ -381,7 +386,9 @@
                                     <constraint firstItem="zeS-f8-tnj" firstAttribute="leading" secondItem="SdR-TS-LFL" secondAttribute="leading" constant="33" id="9Ik-bY-TNj">
                                         <variation key="heightClass=compact" constant="20"/>
                                     </constraint>
-                                    <constraint firstItem="ltc-wR-ME6" firstAttribute="leading" secondItem="xPZ-cT-Nqp" secondAttribute="trailing" constant="53" id="Aef-pj-9PQ"/>
+                                    <constraint firstItem="ltc-wR-ME6" firstAttribute="leading" secondItem="xPZ-cT-Nqp" secondAttribute="trailing" constant="53" id="Aef-pj-9PQ">
+                                        <variation key="heightClass=compact" constant="150"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="101" id="MfB-X3-iDE">
                                         <variation key="heightClass=compact" constant="87"/>
                                     </constraint>
@@ -511,7 +518,7 @@
                                     <constraint firstAttribute="height" constant="100" id="E3s-pX-rI6"/>
                                     <constraint firstItem="lCy-2D-dC6" firstAttribute="top" secondItem="c9v-9k-Jmg" secondAttribute="bottom" constant="1.5" id="Fid-mF-otY"/>
                                     <constraint firstItem="c9v-9k-Jmg" firstAttribute="top" secondItem="uxv-qh-86m" secondAttribute="top" constant="8" id="RIL-Wt-b95">
-                                        <variation key="heightClass=compact" constant="13"/>
+                                        <variation key="heightClass=compact" constant="17"/>
                                     </constraint>
                                     <constraint firstAttribute="width" constant="568" id="SeC-sH-aOe"/>
                                     <constraint firstItem="lCy-2D-dC6" firstAttribute="leading" secondItem="uxv-qh-86m" secondAttribute="leading" constant="1" id="VLl-ga-8vc"/>
@@ -745,7 +752,9 @@
                     <connections>
                         <outlet property="aiCards" destination="SdR-TS-LFL" id="oLY-kS-dec"/>
                         <outlet property="dealerCardsView" destination="uxv-qh-86m" id="daB-Pf-MrR"/>
-                        <outlet property="gameStatus" destination="TTY-3V-kW3" id="MeR-Bl-Rpz"/>
+                        <outlet property="gameStatus" destination="TTY-3V-kW3" id="LC5-I6-LcS"/>
+                        <outlet property="player1Bet" destination="mgF-Qi-G7P" id="hRA-KE-yba"/>
+                        <outlet property="player2Bet" destination="ltc-wR-ME6" id="6eW-Ay-v7l"/>
                         <outlet property="playerCards" destination="Fgx-nE-feE" id="Jif-Be-fdZ"/>
                     </connections>
                 </viewController>
