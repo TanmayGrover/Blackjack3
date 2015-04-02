@@ -253,6 +253,13 @@
                                         <exclude reference="UJe-hD-idg"/>
                                     </mask>
                                 </variation>
+                                <variation key="widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="500" y="0.0" width="49" height="30"/>
+                                    <mask key="constraints">
+                                        <exclude reference="0RF-Dv-UFR"/>
+                                        <exclude reference="UJe-hD-idg"/>
+                                    </mask>
+                                </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nC6-fQ-Baz">
                                 <rect key="frame" x="171" y="456" width="30" height="30"/>
@@ -278,6 +285,12 @@
                                         <exclude reference="ZkQ-CM-D1g"/>
                                     </mask>
                                 </variation>
+                                <variation key="widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="456" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="hit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LJ6-AK-Aqt"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdR-TS-LFL" userLabel="PlayerView">
                                 <rect key="frame" x="16" y="177" width="568" height="100"/>
@@ -609,6 +622,7 @@
                             </constraint>
                             <constraint firstItem="uxv-qh-86m" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="1" id="gU6-yY-tjo"/>
                             <constraint firstItem="SdR-TS-LFL" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" constant="16" id="hWf-wC-ug5"/>
+                            <constraint firstItem="1aY-J3-sba" firstAttribute="leading" secondItem="3rK-0T-Gyi" secondAttribute="trailing" constant="80" id="iK7-6M-JIp"/>
                             <constraint firstItem="hAg-gw-yJM" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="iLS-rk-AXu"/>
                             <constraint firstItem="Fgx-nE-feE" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="iM7-w8-BI9">
                                 <variation key="heightClass=compact" constant="2"/>
@@ -654,16 +668,17 @@
                                 <exclude reference="mlr-UO-jxL"/>
                                 <exclude reference="AGg-bu-TAL"/>
                                 <exclude reference="ekL-gd-UtP"/>
+                                <exclude reference="6zW-nD-GyF"/>
+                                <exclude reference="nV1-uS-kbv"/>
+                                <exclude reference="vQb-R3-oDo"/>
                                 <exclude reference="A42-Z0-dJu"/>
                                 <exclude reference="dTK-ij-xkK"/>
                                 <exclude reference="nEm-H2-7sn"/>
                                 <exclude reference="wfE-gO-g6D"/>
-                                <exclude reference="6zW-nD-GyF"/>
-                                <exclude reference="nV1-uS-kbv"/>
-                                <exclude reference="vQb-R3-oDo"/>
                                 <exclude reference="Ros-ke-bch"/>
                                 <exclude reference="Sre-Di-Y1A"/>
                                 <exclude reference="VtF-yO-q8d"/>
+                                <exclude reference="iK7-6M-JIp"/>
                                 <exclude reference="kJd-kJ-ewn"/>
                             </mask>
                         </variation>
@@ -702,15 +717,15 @@
                                 <exclude reference="ru5-Bq-Awa"/>
                                 <include reference="AGg-bu-TAL"/>
                                 <exclude reference="ekL-gd-UtP"/>
-                                <include reference="A42-Z0-dJu"/>
-                                <include reference="dTK-ij-xkK"/>
-                                <include reference="nEm-H2-7sn"/>
                                 <exclude reference="6zW-nD-GyF"/>
                                 <exclude reference="NxW-cE-afM"/>
                                 <exclude reference="XA3-9t-nqP"/>
                                 <exclude reference="cZG-AE-Mno"/>
                                 <include reference="nV1-uS-kbv"/>
                                 <exclude reference="vQb-R3-oDo"/>
+                                <include reference="A42-Z0-dJu"/>
+                                <include reference="dTK-ij-xkK"/>
+                                <include reference="nEm-H2-7sn"/>
                                 <exclude reference="H2b-F3-FM7"/>
                                 <exclude reference="Ros-ke-bch"/>
                                 <include reference="Sre-Di-Y1A"/>
@@ -718,10 +733,19 @@
                                 <exclude reference="aGI-5B-C7q"/>
                             </mask>
                         </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="cZG-AE-Mno"/>
+                                <exclude reference="H2b-F3-FM7"/>
+                                <exclude reference="aGI-5B-C7q"/>
+                                <include reference="iK7-6M-JIp"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="aiCards" destination="SdR-TS-LFL" id="oLY-kS-dec"/>
                         <outlet property="dealerCardsView" destination="uxv-qh-86m" id="daB-Pf-MrR"/>
+                        <outlet property="gameStatus" destination="TTY-3V-kW3" id="MeR-Bl-Rpz"/>
                         <outlet property="playerCards" destination="Fgx-nE-feE" id="Jif-Be-fdZ"/>
                     </connections>
                 </viewController>

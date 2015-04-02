@@ -20,6 +20,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var dealerCardsView: UIView!
     
+    
+    @IBOutlet weak var gameStatus: UILabel!
+    
+    
     //Initialisation
     
     var deckObject = Deck()
@@ -87,7 +91,7 @@ class ViewController: UIViewController {
             playerArray[0].hand.cards.removeAll()
             playerArray[0].setUpHand()
         displayCards(playerArray[0].hand.cards, playerCardView : playerCards, yCord : 56 , dealerCard : dealerFlip)
-        
+            playerArray[0].hand.status = statusOfHand.turn
         
             playerArray[1].hand.cards.removeAll()
           playerArray[1].setUpHand()
@@ -143,6 +147,44 @@ class ViewController: UIViewController {
         UIGraphicsEndImageContext()
         return newImage
     }
+    
+    
+    @IBAction func hit(sender: AnyObject) {
+        if playerArray[0].hand.status == statusOfHand.turn {
+            playerArray[0].getCardForHit()
+            
+            
+            displayCards(playerArray[0].hand.cards, playerCardView : playerCards, yCord : 56 , dealerCard : dealerFlip)
+            
+            if (playerArray[0].hand.Blackjack()){
+                gameStatus.text = "BLACKJACK !! Player Won"
+                playerArray[0].hand.status = statusOfHand.blackjack
+                value++
+                if (value <= playerArray.count){
+                    
+                    playerArray[value].hand.status = statusOfHand.turn
+                    
+                }
+                
+            }
+            else if (playerArray[0].hand.Busted()){
+                gameStatus.text = "BUSTED !! PLAYER LOST"
+               playerArray[0].hand.status = statusOfHand.busted
+                value++
+                if(value <=  playerArray.count){
+                    
+                    
+                    playerArray[value].hand.status = statusOfHand.turn
+                    //break
+                }
+                
+                
+                
+            }
+            
+        }
+    }
+    
     
    
     
