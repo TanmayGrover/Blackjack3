@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     var statusString : String = ""
    
     
-    override func viewDidLoad() {
+   override func viewDidLoad() {
         super.viewDidLoad()
         
         //self.playercard1.image = UIImage(named: "card5")
@@ -122,12 +122,26 @@ class ViewController: UIViewController {
     func displayCards(cards : [Int],  playerCardView : UIView, yCord : CGFloat , dealerCard : Bool ){
         var temp : CGFloat = 55
         var imageName : String
+        
+        var subViews = playerCardView.subviews
+        
+        
+        
+        
+        for u in subViews as [UIView] {
+            
+            if (u.tag == 100){
+                u.removeFromSuperview()
+            }
+        }
+
+
         for i in 1...cards.count{
             
             let testFrame : CGRect = CGRectMake( 1 + CGFloat(i-1)*temp, yCord,50,70)
             
             var testView : UIView = UIView(frame: testFrame)
-            
+            testView.tag = 100
             if(dealerCard && i==1){
                  imageName = "back"
             }
@@ -145,6 +159,7 @@ class ViewController: UIViewController {
             
             playerCardView.addSubview(testView)
             
+        
         }
         
     }
@@ -164,6 +179,7 @@ class ViewController: UIViewController {
             
             
             displayCards(playerArray[0].hand.cards, playerCardView : playerCards, yCord : 56 , dealerCard : dealerFlip)
+            var subViews = playerCards.subviews
             
             gameStatus.text = "Do you wanna Hit or Stand ?"
             
@@ -304,6 +320,8 @@ class ViewController: UIViewController {
         playerArray[0].hand.cards.removeAll()
         playerArray[1].hand.cards.removeAll()
         dealerObject.hand.cards.removeAll()
+        
+        
         for p in playerArray{
             
             
@@ -321,7 +339,7 @@ class ViewController: UIViewController {
         
         if (round > 5){
             round = 0
-            //d.shuffle()
+            deckObject.shuffle()
         }
         //roundCount.text = "Round \(round)"
         
