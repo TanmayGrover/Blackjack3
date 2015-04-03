@@ -122,20 +122,13 @@ class ViewController: UIViewController {
     func displayCards(cards : [Int],  playerCardView : UIView, yCord : CGFloat , dealerCard : Bool ){
         var temp : CGFloat = 55
         var imageName : String
-        
         var subViews = playerCardView.subviews
-        
-        
-        
-        
         for u in subViews as [UIView] {
             
             if (u.tag == 100){
                 u.removeFromSuperview()
             }
         }
-
-
         for i in 1...cards.count{
             
             let testFrame : CGRect = CGRectMake( 1 + CGFloat(i-1)*temp, yCord,50,70)
@@ -158,8 +151,6 @@ class ViewController: UIViewController {
             testView.addSubview(imageView)
             
             playerCardView.addSubview(testView)
-            
-        
         }
         
     }
