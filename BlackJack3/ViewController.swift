@@ -292,12 +292,11 @@ class ViewController: UIViewController {
         }
         
         
-        for p in playerArray{
+        
             
-            var playerStatus : String = "P\(j1+1) has \(p.hand.money)"
-            statusString = statusString + "  " + playerStatus
-            j1++
-        }
+        
+            statusString = "Player has: "+String(playerArray[0].hand.money)+" and"+"  AI has: "+String(playerArray[1].hand.money)
+        
        
         
         gameStatus.text = statusString

@@ -28,7 +28,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Play Game">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="0.99670673720000003" blue="0.20300531150000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -744,7 +744,7 @@
                             <constraint firstItem="SdR-TS-LFL" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" constant="10" id="0Nx-yl-7Hf"/>
                             <constraint firstItem="nC6-fQ-Baz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="148" id="0OB-AD-jR0"/>
                             <constraint firstItem="TTY-3V-kW3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="1Md-k5-QZg">
-                                <variation key="heightClass=compact" constant="120"/>
+                                <variation key="heightClass=compact" constant="200"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="Fgx-nE-feE" secondAttribute="trailing" constant="16" id="3dU-zk-CH0"/>
                             <constraint firstItem="SdR-TS-LFL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="56T-1g-Tjh"/>
